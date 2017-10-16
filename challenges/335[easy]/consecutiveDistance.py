@@ -3,13 +3,9 @@ https://www.reddit.com/r/dailyprogrammer/comments/759fha/20171009_challenge_335_
 '''
 
 def calcuateConsecutiveNDist(listInput, n):
-    sortedList = list(listInput)
-    sortedList.sort()
     consectDistRating = 0
-    
-    for item in range(len(sortedList) - 1):
-        consecutiveValue = sortedList[item] + n
-        if consecutiveValue in sortedList:
-            consectDistRating += abs(listInput.index(sortedList[item]) - listInput.index(consecutiveValue))
-    
+    for item in range(len(listInput)):
+        consecutiveValue = listInput[item] + n
+        if consecutiveValue in listInput:
+            consectDistRating += abs(listInput.index(listInput[item]) - listInput.index(consecutiveValue))
     return consectDistRating
