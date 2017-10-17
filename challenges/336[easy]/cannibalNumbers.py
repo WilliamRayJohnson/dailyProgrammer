@@ -11,8 +11,11 @@ def countCannibals(targetValue, numberSet):
             cannibalCount += 1
             numberSet = numberSet[1:]
         elif len(numberSet) >= 2:
-            numberSet[0] += 1
-            numberSet = numberSet[:len(numberSet)-1]
+            if numberSet[0] > numberSet[1]:
+                numberSet[0] += 1
+                numberSet = numberSet[:len(numberSet)-1]
+            else:
+                numberSet = numberSet[1:]
         else:
             numberSet = numberSet[1:]
     return cannibalCount

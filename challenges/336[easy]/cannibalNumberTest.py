@@ -22,7 +22,7 @@ class cannibalNumberTest(unittest.TestCase):
     def testExample3(self):
         inputList = [4,4,4,4,4,4,4]
         target = 5
-        expectedOutput = 3
+        expectedOutput = 0
         actualOutput = cn.countCannibals(target, inputList)
         
         self.assertEqual(expectedOutput, actualOutput)
