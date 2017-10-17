@@ -19,6 +19,14 @@ class cannibalNumberTest(unittest.TestCase):
         
         self.assertEqual(expectedOutput, actualOutput)
         
+    def testExample3(self):
+        inputList = [4,4,4,4,4,4,4]
+        target = 5
+        expectedOutput = 3
+        actualOutput = cn.countCannibals(target, inputList)
+        
+        self.assertEqual(expectedOutput, actualOutput)
+        
     def testQueryCannibalCounts(self):
         inputList = [21, 9, 5, 8, 10, 1, 3]
         queries = [10, 15]
