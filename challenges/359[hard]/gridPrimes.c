@@ -107,8 +107,32 @@ int main(int argc, char *argv[]) {
 
 void *processGridLine(void *arg) {
     Grid_Thread_Data *gridData = (Grid_Thread_Data *) arg;
+    int *lineMovement = (int *) malloc(2 * sizeof(int));
+
     printf("Type %d thread created: [%d, %d] -> [%d, %d]\n",
             gridData->lineType, gridData->xOne, gridData->yOne,
             gridData->xTwo, gridData->yTwo);
+
+    switch(gridData->lineType) {
+        case 0: // Rows
+            lineMovement[0] = 0;
+            lineMovement[1] = 1;
+            break;
+        case 1: // Columns
+            lineMovement[0] = 1;
+            lineMovement[1] = 0;
+            break;
+        case 2:
+            lineMovement[0] = 1;
+            lineMovement[1] = 1;
+            break;
+        case 3:
+            lineMovement[0] = -1;
+            lineMovement[1] = -1;
+            break;
+        default:
+            break;
+    }
+
     pthread_exit(NULL);
 }
